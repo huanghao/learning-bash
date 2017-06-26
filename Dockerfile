@@ -11,7 +11,9 @@ RUN apt-get update && apt-get install -y \
 	vim \
 	emacs-nox \
 	wget \
-	curl
+	curl \
+	less
+
 RUN echo 'root:Docker!' | chpasswd
 RUN useradd -ms /bin/bash alice
 USER alice
