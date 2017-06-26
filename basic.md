@@ -52,4 +52,16 @@
 ![vim.png](vim.png)
 
 输入`:q<Enter>`可以退出vim编辑器，回到shell提示符。
-    
+    
+manual: man命令可以用来查看命令的手册。将会进入到一个交互式的界面。需要记住的几个按键有：
+
+- q: 退出man
+- h: 查看帮助
+- j: 下一行
+- k: 上一行
+- f: 下一页
+- b: 上一页
+
+    alice@lb:~$ man bash
+
+![man.png](man.png)
