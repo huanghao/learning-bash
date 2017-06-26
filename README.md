@@ -3,7 +3,7 @@
 one day class of learning bash
 
 - [介绍](intro.md)
-- 简单操作：目录，用户，文件操作（查看，编辑）
+- [环境](basic.md)
 - 操作系统基本概念：系统调用，进程，文件系统，用户，权限，管道，重定向，包管理
 - man
 - 文件
