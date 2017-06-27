@@ -11,20 +11,19 @@
     alice@lb:/tmp$ pwd
     /tmp
 
-`-`切换到上次的位置
+使用`-`切换到上次的位置
 
     alice@lb:/tmp$ cd -
     /home/alice
     alice@lb:~$ cd -
     /tmp
 
-`pushd`和`popd`维护了一个目录栈（FILO）。
+`pushd`和`popd`共同维护了一个目录栈（FILO）。
 
-`pushd`切换到给定目录，并把该目录放到栈顶。
+- `pushd`切换到给定目录，并把该目录放到栈顶。
+- `popd`从栈顶移除一个目录，并切换到这个目录。
 
-`popd`从栈顶移除一个目录，并切换到这个目录。
-
-仔细看例子PS1中当前目录的变化
+仔细看例子中当前目录的变化
 
     alice@lb:~$ pushd /tmp
     /tmp ~
@@ -115,3 +114,10 @@
 从顶层目录开始递归删除（包含所有文件）
 
     $ rm -r x/
+
+## basename & dirname: 获得目录和文件名
+
+    $ dirname /home/alice
+    /home
+    $ basename /home/alice
+    alice

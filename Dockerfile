@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y \
 	less \
 	sudo \
 	tree \
-	netcat
+	netcat \
+	python3-minimal
 
 RUN useradd -m -s /bin/bash -G sudo alice && useradd -m -s /bin/bash -G sudo bob
 RUN echo 'alice ALL=NOPASSWD: ALL' >> /etc/sudoers
