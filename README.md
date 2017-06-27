@@ -40,6 +40,7 @@ One day class to learn bash
     - shebang
     - 命令行参数
     - 子进程和环境变量
+- [兼容](compatibility.dm)
 
 [练习](quiz.md)
 
