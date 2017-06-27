@@ -15,19 +15,17 @@ one day class to learn bash
   - [文本](txt2.md)：grep, awk, sed, python/perl
   - [压缩](zip.md)：tar, gzip, gunzip, bzip2, bunzip2, bzcat
   - [比较](diff.md)：diff, md5sum, cmp, comm
-  - [文件系统](fs.md)：df, mount/umount, fsck, sync
 - 进程
-  - [查看](ps.md): ps, uptime, w, top, free
+  - [查看](ps.md): ps, uptime, top, free
   - [控制](ctrl.md): kill, sleep, watch, crontab
 - 用户
-  - [查看](who.md): whoami, id, finger, who, last
+  - [查看](who.md): whoami, id, who, last
   - [编辑](user.md): useradd, userdel, usermod, passwd, chsh
-  - [用户组](group.md): groups, groupadd, groupdel, groupmod
   - [切换](su.md): su, sudo
 - 主机信息
   - [信息](host.md): uname, hostname
   - [net](net.md): host, whois, ping, traceroute
-  - [connect](conn.md): 连接：ssh, telnet, scp, sftp, ftp, nc
+  - [连接](conn.md): ssh, telnet, scp, nc
 - [时间](time.md)：date, cal, ntpdate
 - [shell语法](sh.md)
   - 变量
