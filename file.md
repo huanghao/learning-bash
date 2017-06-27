@@ -11,11 +11,11 @@
 
     $ ls / /home
     /:
-    bin   dev  home  lib64  mnt  proc  run   srv  tmp  var
-    boot  etc  lib   media  opt  root  sbin  sys  usr
+    bin/   dev/  home/  lib64/  mnt/  proc/  run/   srv/  tmp/  var/
+    boot/  etc/  lib/   media/  opt/  root/  sbin/  sys/  usr/
 
     /home:
-    alice
+    alice/  bob/
 
 `.`代表当前目录；`..`代表父目录；其他以`.`开头的文件为隐藏文件，默认ls不会显示。
 

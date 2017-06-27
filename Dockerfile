@@ -20,5 +20,8 @@ RUN apt-get update && apt-get install -y \
 RUN useradd -m -s /bin/bash -G sudo alice && useradd -m -s /bin/bash -G sudo bob
 RUN echo 'alice ALL=NOPASSWD: ALL' >> /etc/sudoers
 RUN printf 'alice:Docker!\nbob:Docker!' | chpasswd
+
+RUN printf "alias ls='ls -F --color'" > /home/alice/.bash_aliases
+
 USER alice
 WORKDIR /home/alice
