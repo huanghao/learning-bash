@@ -13,7 +13,7 @@ one day class to learn bash
   - [属性](attr.md)：stat, du, file, touch, chown, chmod, umask
   - [位置](path.md)：find, which, whereis
   - [文本](txt2.md)：grep, awk, sed, python/perl
-  - [压缩](zip.dm)：tar, gzip, gunzip, bzip2, bunzip2, bzcat
+  - [压缩](zip.md)：tar, gzip, gunzip, bzip2, bunzip2, bzcat
   - [比较](diff.md)：diff, md5sum, cmp, comm
   - [文件系统](fs.md)：df, mount/umount, fsck, sync
 - 进程
@@ -26,10 +26,8 @@ one day class to learn bash
   - [切换](su.md): su, sudo
 - 主机信息
   - [信息](host.md): uname, hostname
-  - [ip](ip.md): ip, ipconfig
   - [net](net.md): host, whois, ping, traceroute
   - [connect](conn.md): 连接：ssh, telnet, scp, sftp, ftp, nc
-  - [download](download.md): curl, wget
 - [时间](time.md)：date, cal, ntpdate
 - [shell语法](sh.md)
   - 变量
@@ -39,6 +37,5 @@ one day class to learn bash
   - 循环语句
   - shebang
   - 命令行参数
-  - 退出状态
 
 TODO：练习
