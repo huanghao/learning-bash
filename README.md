@@ -9,10 +9,10 @@ one day class to learn bash
 - 文件
   - [基本](file.md)：ls, mv, cp, rm, ln
   - [目录](dir.md)：cd, pwd, basename, dirname, mkdir, rmdir, rm -r, pushd/popd
-  - [内容](txt.md)：cat, less, head, tail, nl, strings, xxd, sort | vim, emacs
-  - [属性](attr.md)：stat, wc, du, file, touch, chown, chgrp, chmod, umask, chattr, lsattr
-  - [位置](path.md)：find, xargs, locate, which, type, whereis
-  - [文本](txt2.md)：grep, cut, paste, tr, sort, uniq, tee | awk, sed, python/perl
+  - [内容](txt.md)：cat, wc, less, head, tail, nl, strings, xxd, xargs, sort, uniq, cut, tee vim, emacs
+  - [属性](attr.md)：stat, du, file, touch, chown, chmod, umask
+  - [位置](path.md)：find, locate, which, type, whereis
+  - [文本](txt2.md)：grep, awk, sed, python/perl
   - [压缩](zip.dm)：tar, gzip, gunzip, bzip2, bunzip2, bzcat
   - [比较](diff.md)：diff, md5sum, cmp, comm
   - [文件系统](fs.md)：df, mount/umount, fsck, sync

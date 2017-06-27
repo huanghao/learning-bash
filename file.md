@@ -90,6 +90,26 @@
     -rw-r--r-- 1 root root     610 Jun 26 16:08 group
     -rw-r----- 1 root shadow   513 Jun 26 16:08 gshadow
 
+### wildcard：通配符
+
+- `*`：任意长度字符串（可以为空）
+- `?`：任意一个字符（不能为空）
+
+可以出现在文件名的任何位置，用来通配各种字符。
+
+    $ ls /etc/*.conf
+    /etc/adduser.conf          /etc/host.conf      /etc/nsswitch.conf
+    /etc/ca-certificates.conf  /etc/insserv.conf   /etc/pam.conf
+    /etc/debconf.conf          /etc/ld.so.conf     /etc/resolv.conf
+    /etc/deluser.conf          /etc/libaudit.conf  /etc/sysctl.conf
+    /etc/gai.conf              /etc/mke2fs.conf
+
+    $ ls /etc/de*.conf
+    /etc/debconf.conf  /etc/deluser.conf
+
+    $ ls /etc/???.conf
+    /etc/gai.conf  /etc/pam.conf
+
 ## mv: 移动文件
 
     $ ls

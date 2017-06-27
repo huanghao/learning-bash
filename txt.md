@@ -16,6 +16,13 @@
          3  DISTRIB_CODENAME=xenial
          4  DISTRIB_DESCRIPTION="Ubuntu 16.04.2 LTS"
 
+## wc
+
+newline(-l), word(-w), bytes(-c)
+
+    $ wc /etc/sysctl.conf
+      60  279 2084 /etc/sysctl.conf
+
 ## head, tail: 显示文件头和尾的内容
 
 ### 默认10行
@@ -105,6 +112,10 @@ windows中的文件拷贝到linux上经常见到`^M`符号：M是字符表中的
     10
 
 ![headtail.jpg](headtail.jpg)
+
+持续显示`-f`
+
+    $ tail -f some-log-file
 
 ## less, more: 分页显示文件内容
 
@@ -198,6 +209,126 @@ shell管道是一种进程通讯的方式。管道的一头输入数据，另一
     clark 112
     john 112
 
+## xargs
+
+    $ seq 1 10 | xargs -n 1
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+
+    $ seq 1 10 | xargs -n 3
+    1 2 3
+    4 5 6
+    7 8 9
+    10
+
+## uniq：去重
+
+在去重前，必须先排序，相同的行需要出现在一起
+
+    $ echo a a b b b c d c | xargs -n1 | sort | uniq
+    a
+    b
+    c
+    d
+
+对重复的行计数`-c`
+
+    $ echo a a b b b c d c | xargs -n1 | sort | uniq -c
+          2 a
+          3 b
+          2 c
+          1 d
+
+只输出重复的行`-d`
+
+    $ echo a a b b b c d c | xargs -n1 | sort | uniq -d
+    a
+    b
+    c
+
+只输出重复的行`-u`
+
+    $ echo a a b b b c d c | xargs -n1 | sort | uniq -u
+    d
+
+## cut
+
+使用`-d`指定分隔符，默认为`\t`。使用`-f`选择需要的列
+
+    $ seq 1 10 | xargs -n3 | cut -f 2 -d' '
+    2
+    5
+    8
+    10
+
+使用`-b`选择需要的列（按字节算）
+
+    $ seq 101 109 | xargs -n3 | cut -b2-5
+    01 1
+    04 1
+    07 1
+
+使用`--output-delimiter`设置输出的分隔符
+
+    $ seq 1 9 | xargs -n3 | cut -f 2,3 -d ' ' --output-delimiter=', '
+    2, 3
+    5, 6
+    8, 9
+
+## tr [OPTION] SET1 [SET2]：转换或者删除字符
+
+把SET1中的字符一对一转换成SET2里的字符
+
+    $ cat /etc/hosts
+    127.0.0.1   localhost
+    ::1 localhost ip6-localhost ip6-loopback
+    fe00::0 ip6-localnet
+    ff00::0 ip6-mcastprefix
+    ff02::1 ip6-allnodes
+    ff02::2 ip6-allrouters
+    172.17.0.2  lb
+
+caesar cipher
+
+    $ cat /etc/hosts | tr abcdefghijklmnopqrstuvwxyz defghijklmnopqrstuvwxyzabc
+    127.0.0.1   orfdokrvw
+    ::1 orfdokrvw ls6-orfdokrvw ls6-orrsedfn
+    ih00::0 ls6-orfdoqhw
+    ii00::0 ls6-pfdvwsuhila
+    ii02::1 ls6-dooqrghv
+    ii02::2 ls6-doourxwhuv
+    172.17.0.2  oe
+
+删除掉SET1中的字符`-d`
+
+    $ cat /etc/hosts | tr -d abcd
+    127.0.0.1   lolhost
+    ::1 lolhost ip6-lolhost ip6-loopk
+    fe00::0 ip6-lolnet
+    ff00::0 ip6-mstprefix
+    ff02::1 ip6-llnoes
+    ff02::2 ip6-llrouters
+    172.17.0.2  l
+
+使用SET1的补集`-c`。下例中，除了小写字母，空格和回车，其他字符都会被删除。
+
+    $ cat /etc/hosts | tr -dc 'a-z \n'
+    localhost
+    localhost iplocalhost iploopback
+    feiplocalnet
+    ffipmcastprefix
+    ffipallnodes
+    ffipallrouters
+    lb
+
 ## redirection：重定向
 
 小于号`<`用来重定向标准输入
@@ -226,6 +357,23 @@ shell管道是一种进程通讯的方式。管道的一头输入数据，另一
 这三个文件句柄可以同时都做重定向。这里的`2>&1`是一种固定写法，表示把2重定向到1上。
 
     $ cmd <infile >outfile 2>&1
+
+两个大于号`>>`（`1>>`）和`2>>`用来重定向输出，但是以追加的形式写文件，而不是覆盖的形式。
+
+    $ cmd >>log 2>&1
+
+## tee [OPTION] [FILE]：T形输出
+
+从输入读入数据，往标准输出写一份，再往文件里也写一份。可以看成数据从 *T* 下面的管子输入，从上面左边和右边分别输出一份。
+
+    $ seq 1 3 | tee one2three
+    1
+    2
+    3
+    $ cat one2three
+    1
+    2
+    3
 
 ## vim or emacs
 
