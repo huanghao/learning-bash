@@ -1,11 +1,11 @@
 # learning-bash
 
-one day class of learning bash
+one day class to learn bash
 
 - [介绍](intro.md)
 - [环境](basic.md)
 - [操作系统](os101.md)
-- [屏幕](echo.md): echo, printf, yes, seq, clear
+- [输出](echo.md): echo, printf, yes, seq, clear
 - 文件
   - [基本](file.md)：ls, mv, cp, rm, ln
   - [目录](dir.md)：cd, pwd, basename, dirname, mkdir, rmdir, rm -r, pushd/popd
@@ -40,4 +40,5 @@ one day class of learning bash
   - shebang
   - 命令行参数
   - 退出状态
-  
+
+TODO：练习

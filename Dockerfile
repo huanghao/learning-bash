@@ -12,9 +12,13 @@ RUN apt-get update && apt-get install -y \
 	emacs-nox \
 	wget \
 	curl \
-	less
+	less \
+	sudo \
+	tree \
+	netcat
 
-RUN echo 'root:Docker!' | chpasswd
-RUN useradd -ms /bin/bash alice
+RUN useradd -m -s /bin/bash -G sudo alice && useradd -m -s /bin/bash -G sudo bob
+RUN echo 'alice ALL=NOPASSWD: ALL' >> /etc/sudoers
+RUN printf 'alice:Docker!\nbob:Docker!' | chpasswd
 USER alice
 WORKDIR /home/alice
