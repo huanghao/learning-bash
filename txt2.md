@@ -32,6 +32,32 @@ grep是另一个linux中非常重要的命令。建议通过man grep详细阅读
 
 ## awk
 
+awk按行来处理文本，每行再分成很多列。输入分隔符是`IFS`，默认是空白字符，输出分隔符是`OFS`，默认是空格。
+
+程序结构
+
+BEGIN block只在程序最开始执行一次，END只在最后执行一次。中间的pattern和action可以有多个。
+
+pattern是可选的，如果没有模式定义，就代表匹配所有。模式的形式类似于`$2 = "404"`。
+
+action在对应的模式匹配了已经需要进行的操作。默认的操作就是输出整行。
+
+    BEGIN {...}
+    
+    pattern_1 {...}
+    ...
+    pattern_n {...}
+    
+    END {}
+
+    $ head -2 logs
+    172.17.0.1 - - [27/Jun/2017:18:24:58 +0000] "GET / HTTP/1.1" 403 572 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36" "-"
+    172.17.0.1 - - [27/Jun/2017:18:25:02 +0000] "GET / HTTP/1.1" 403 572 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36" "-"
+
+    $ cat logs | awk '{print $4}' | awk -F':' '{print $2 ":" $3}' | uniq -c
+          1 18:24
+          4 18:25
+
 ## sed
 
 ## python

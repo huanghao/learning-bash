@@ -1,0 +1,5 @@
+172.17.0.1 - - [27/Jun/2017:18:24:58 +0000] "GET / HTTP/1.1" 403 572 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36" "-"
+172.17.0.1 - - [27/Jun/2017:18:25:02 +0000] "GET / HTTP/1.1" 403 572 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36" "-"
+172.17.0.1 - - [27/Jun/2017:18:25:07 +0000] "GET /headtail.jpg HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36" "-"
+172.17.0.1 - - [27/Jun/2017:18:25:11 +0000] "GET /headtail.png HTTP/1.1" 404 572 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36" "-"
+172.17.0.1 - - [27/Jun/2017:18:25:19 +0000] "GET /who.md HTTP/1.1" 200 1181 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36" "-"
